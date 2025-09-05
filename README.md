@@ -1,29 +1,6 @@
 # CDMO Project: Sports Tournament Scheduling (STS)
 
 This repository contains our solution for the **Combinatorial Decision Making and Optimization (CDMO)** course project at the University of Bologna for the academic year 2024/2025. The project focuses on modelling and solving the **Sports Tournament Scheduling (STS)** problem using three different technologies: a two-phase Constraint Programming (CP) approach, a propositional SATisfiability (SAT) solver, and a Mixed-Integer Linear Programming (MIP) model.
-## Project Structure
-CDMO_Proj_LastnameName1_LastnameName2/ # Main project folder
-├── source/ # Source code directory
-│ ├── CP/
-│ │ ├── simple_CP.mzn # Basic CP model (MiniZinc)
-│ │ ├── phase2_optimize.mzn # CP optimization model for H/A balance (MiniZinc)
-│ │ ├── runCP_solvers.py # Python script to run CP models & generate results
-│ │ └── run_2phaseCP_solver.py # Python script for the two-phase CP approach
-│ ├── SAT/
-│ │ └── z3_SAT.py # Python script defining the Z3 SAT model
-│ └── MIP/
-│ └── MIP.py # Python script defining the PuLP/CVXPY MIP model
-├── res/ # Results directory (Generated after execution)
-│ ├── CP/
-│ │ └── *.json # JSON results for each instance from CP models
-│ ├── SAT/
-│ │ └── *.json # JSON results for each instance from the SAT model
-│ └── MIP/
-│ └── *.json # JSON results for each instance from the MIP model
-├── utils/
-│ └── solution_checker.py # Provided solution checker (DO NOT MODIFY)
-├── requirements.txt # Python dependencies
-└── README.md # This file
 
 ## Technologies & Approaches
 
@@ -31,7 +8,7 @@ CDMO_Proj_LastnameName1_LastnameName2/ # Main project folder
     *   **`simple_CP.mzn`**: A basic MiniZinc model to find a feasible schedule.
     *   **`phase2_optimize.mzn`**: An optimization model that takes a feasible solution and minimizes home/away imbalance by swapping assignments.
     *   **`run_2phaseCP_solver.py`**: A Python script that orchestrates the two-phase process (feasibility then optimization) using the `minizinc` Python package and the Gecode solver.
-    *   **`runCP_solvers.py`**: A script to run individual CP models.
+    *   **`runCP_solvers.py`**: A script to run individual CP models.(without optimization)
 
 2.  **Propositional SATisfiability (SAT):**
     *   **`z3_SAT.py`**: A Python script that encodes the STS problem into a propositional SAT formula using the Z3 API, solves it, and outputs the results.
